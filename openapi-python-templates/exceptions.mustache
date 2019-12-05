@@ -1,7 +1,11 @@
 import json
 from typing import Any, Dict, Optional
 
-from httpx import AsyncResponse
+try:
+    from httpx import AsyncResponse
+except ImportError:
+    from httpx import Response as AsyncResponse
+
 from httpx.models import Headers
 
 MAX_CONTENT = 200
